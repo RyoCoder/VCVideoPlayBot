@@ -60,4 +60,4 @@ async def import_playlist(client, m: Message):
         else:
             await status.delete()
     else:
-        await m.reply("No playList file given. Use @GetPlayListBot  or search for a playlist in to get a playlist file.")
+        await m.reply("No playList file given. Use  or search for a playlist in to get a playlist file.")
