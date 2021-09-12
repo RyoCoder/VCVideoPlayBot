@@ -32,7 +32,7 @@ async def add_to_playlist(_, message: Message):
     if Config.ADMIN_ONLY == "Y":
         admins = await get_admins(Config.CHAT)
         if message.from_user.id not in admins:
-            await message.reply_sticker("CAADBQADsQIAAtILIVYld1n74e3JuQI")
+            await message.reply_sticker("CAACAgUAAxkBAAIB52E-QTe8RbGgdg58LfKqJyf594zNAALIAwACucGRVfmUqyw55GCyIAQ")
             return
     type=""
     yturl=""
@@ -168,7 +168,7 @@ async def clear_play_list(client, m: Message):
 async def yt_play_list(client, m: Message):
     if m.reply_to_message is not None and m.reply_to_message.document:
         if m.reply_to_message.document.file_name != "YouTube_PlayList.json":
-            await m.reply("Invalid PlayList file given. Use @GetAPlayListBot  or search for a playlist in @YTPlayListData to get a playlist file.")
+            await m.reply("Invalid PlayList file given. Use  or search for a playlist in to get a playlist file.")
             return
         ytplaylist=await m.reply_to_message.download()
         status=await m.reply("Trying to get details from playlist.")
@@ -186,7 +186,7 @@ async def yt_play_list(client, m: Message):
         else:
             await status.delete()
     else:
-        await m.reply("No playList file given. Use @GetAPlayListBot  or search for a playlist in @YTPlayListData to get a playlist file.")
+        await m.reply("No playList file given. Use  or search for a playlist in to get a playlist file.")
 
 
 @Client.on_message(filters.command(["stream", f"stream@{Config.BOT_USERNAME}"]) & admin_filter & (filters.chat(Config.CHAT) | filters.private))
@@ -215,16 +215,15 @@ admincmds=["yplay", "leave", "pause", "resume", "skip", "restart", "volume", "sh
 
 @Client.on_message(filters.command(admincmds) & ~admin_filter & (filters.chat(Config.CHAT) | filters.private))
 async def notforu(_, m: Message):
-    await _.send_cached_media(chat_id=m.chat.id, file_id="CAADBQADEgQAAtMJyFVJOe6-VqYVzAI", caption="You Are Not Authorized", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚡️Join Here', url='https://t.me/subin_works')]]))
+    await _.send_cached_media(chat_id=m.chat.id, file_id="CAACAgUAAxkBAAIB52E-QTe8RbGgdg58LfKqJyf594zNAALIAwACucGRVfmUqyw55GCyIAQ", caption="You Are Not Authorized", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('⚡️Join Here', url='https://t.me/subin_works')]]))
 allcmd = ["play", "player", f"play@{Config.BOT_USERNAME}", f"player@{Config.BOT_USERNAME}"] + admincmds
 
 @Client.on_message(filters.command(allcmd) & ~filters.chat(Config.CHAT) & filters.group)
 async def not_chat(_, m: Message):
     buttons = [
         [
-            InlineKeyboardButton('⚡️Make Own Bot', url='https://github.com/ZauteKm/vcVideoPlayer'),
-            InlineKeyboardButton('🧩 Join Here', url='https://t.me/tgbotsproject'),
+            InlineKeyboardButton('🧩 Feedback', url='https://t.me/owohub'),
         ]
         ]
-    await m.reply("<b>You can't use this bot in this group, for that you have to make your own bot from the [SOURCE CODE](https://github.com/Zautekm/VCVideoPlayBot) below.</b>", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))
+    await m.reply("<b>You can't use this bot in this group!</b>", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))
 
