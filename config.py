@@ -137,8 +137,5 @@ These are commands to control player.
  2. Get Logs
     Command: <b>/logs</b>
 
-<b>How Can I Stream In My Group</b>
-  <i>The source code of this bot is public and can be found at <a href=https://github.com/ZauteKm/VCVideoPlayBot>VCVideoPlayBot.</a>\nYou can deploy your own bot and use in your group.</i>
-
 """
 
