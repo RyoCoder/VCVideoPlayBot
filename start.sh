@@ -1,5 +1,5 @@
 echo "Cloning Repo...."
-git clone https://github.com/RyoCoder/vcVideoPlayer /vcVideoPlayer
+git clone https://github.com/RyoCoder/VCVideoPlayBot /vcVideoPlayer
 cd /vcVideoPlayer
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
