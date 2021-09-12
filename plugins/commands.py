@@ -44,8 +44,8 @@ async def show_help(client, message):
     buttons = [
         [
             InlineKeyboardButton('📢 Channel', url='https://t.me/ryostar')
-        ]
-        ]
+        ],
+    ]
     reply_markup = InlineKeyboardMarkup(buttons)
     if Config.msg.get('help') is not None:
         await Config.msg['help'].delete()
@@ -58,7 +58,6 @@ async def repo_(client, message):
     buttons = [
         [
             InlineKeyboardButton('Channel 📢', url='https://t.me/ryostar')
-            
         ],
     ]
     await message.reply("<b>Có con cặc.</b>", reply_markup=InlineKeyboardMarkup(buttons))
